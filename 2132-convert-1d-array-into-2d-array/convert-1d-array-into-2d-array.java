@@ -13,7 +13,7 @@ class Solution {
                 p++;
             }
         }
-
+        System.gc();
         return answer;
     }
 
