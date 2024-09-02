@@ -4,9 +4,11 @@ class Solution {
         if(numRows == 1){
             return s;
         }
+
         boolean goingUp = true;
         int row = 0;
         String[] str = new String[numRows];
+
         for(int i = 0; i < s.length(); i++){
 
             if(str[row] != null){
@@ -30,12 +32,14 @@ class Solution {
         }
 
         String answer = str[0];
+
         for(int i = 1; i < str.length; i++){
             if(str[i] != null){
                 answer = answer + str[i];
             }
             
         }
+        System.gc();
         return answer;
     }
 }
