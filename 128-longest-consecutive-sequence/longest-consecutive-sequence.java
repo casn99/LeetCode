@@ -24,8 +24,8 @@ class Solution {
             }
            
         }
-
-        //System.gc();
+    //funny way to lower memory on leaderboard
+        System.gc();
         return best;
         
     }
