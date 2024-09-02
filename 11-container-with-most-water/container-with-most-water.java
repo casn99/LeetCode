@@ -9,8 +9,7 @@ class Solution {
 
 
         while(left < right){
-            width = right - left;
-            tempWater = Math.min(heights[left], heights[right]) * width;
+            tempWater = Math.min(heights[left], heights[right]) * (right - left);
             maxWater = Math.max(maxWater, tempWater);
 
             if(heights[left] > heights[right]){
