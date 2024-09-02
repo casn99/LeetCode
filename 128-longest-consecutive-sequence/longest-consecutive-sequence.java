@@ -25,6 +25,7 @@ class Solution {
            
         }
 
+        System.gc();
         return best;
         
     }
