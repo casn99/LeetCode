@@ -1,5 +1,6 @@
 class Solution {
     public int getLucky(String s, int k) {
+        //runs very slow because java data types are immutable
         String runner = "";
         int temp = 0;
         for(int j = 0; j < s.length(); j++){
@@ -15,6 +16,7 @@ class Solution {
             runner = Integer.toString(temp);
             temp =0;
         }
+        System.gc();//funny
         return Integer.valueOf(s);
     }
 }
