@@ -9,6 +9,7 @@ class Solution {
             livesLeft = Math.max(livesLeft -1 , nums[currentIndex]);
         }
 
+        System.gc();
         return currentIndex == nums.length -1;
     }
 }
