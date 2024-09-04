@@ -15,7 +15,6 @@ class Solution {
             System.out.println(s);
             runner = Integer.toString(temp);
             temp =0;
-            System.gc();//funny
         }
         
         return Integer.valueOf(s);
