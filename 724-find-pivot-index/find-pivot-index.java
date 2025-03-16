@@ -9,6 +9,7 @@ class Solution {
 	for(int i = 0; i < nums.length; i++){
 		
 		if(leftSum == totalSum - leftSum - nums[i]){
+            System.gc();
 			return i;
 		}
         leftSum += nums[i];
