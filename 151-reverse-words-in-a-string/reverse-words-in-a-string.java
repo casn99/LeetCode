@@ -10,7 +10,6 @@ class Solution {
 
         String answer = "";
         for(int i = words.length -1; i >=0; i--){
-            words[i] = words[i].trim();
             if(words[i].length() != 0)
             {
                 answer = answer + words[i];
