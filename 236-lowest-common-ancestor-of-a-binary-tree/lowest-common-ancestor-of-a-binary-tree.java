@@ -6,9 +6,8 @@
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
  * }
- */
-class Solution {
-    public boolean contains(TreeNode parent, TreeNode child){
+
+public boolean contains(TreeNode parent, TreeNode child){
 
         if(parent == null){
             return false;
@@ -42,5 +41,37 @@ class Solution {
         }else{
             return root;
         }
+    }
+
+
+ */
+class Solution {
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null){
+            return null;
+        }
+        if((root == p || root == q)){
+            return root;
+        }
+        
+
+        TreeNode left = lowestCommonAncestor(root.left, p,q);
+        TreeNode right = lowestCommonAncestor(root.right, p,q);
+
+        if(left != null && right != null){
+            return root;
+        }
+
+        if(left != null){
+            return left;
+        }
+
+        if(right != null){
+            return right;
+        }
+
+        return null;
+        
     }
 }
