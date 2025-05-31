@@ -6,8 +6,6 @@ class Solution {
         w.removeIf((a) -> a.length() ==0);
         words = Arrays.copyOf(w.toArray(), w.toArray().length, String[].class);
 
-        System.out.println(Arrays.toString(words));
-
         String answer = "";
         for(int i = words.length -1; i >=0; i--){
             if(words[i].length() != 0)
