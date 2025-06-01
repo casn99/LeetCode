@@ -1,45 +1,40 @@
 class Solution {
-    public int numIslands(char[][] grid) {
-        int numOfIslands = 0;
 
+    private int[][] directions = {{0,1},{1,0},{-1,0},{0,-1}};
+    public int numIslands(char[][] grid) {
+        int numIslands = 0;
 
         for(int i = 0; i < grid.length; i++){
             for(int j = 0; j < grid[i].length; j++){
                 if(grid[i][j] == '1'){
-                    eliminateIsland(i,j,grid);
-                    numOfIslands++;
+                    eliminateIsland(i, j, grid);
+                    numIslands++;
                 }
             }
         }
 
-        return numOfIslands;
+
+
+        return numIslands;
     }
 
+    private void eliminateIsland(int x, int y, char[][] g){
 
-    public void eliminateIsland(int x, int y, char[][] grid){
+        g[x][y] = '0';
+        
+        for(int[] d : directions){
+            int i = x + d[0];
+            int j = y + d[1];
 
-        if (x < 0 || y < 0 || x >= grid.length || 
-            y >= grid[0].length || grid[x][y] == '0') {
-            return;
+            if(i < 0 || j < 0 || i > g.length-1 ||j > g[i].length-1 || g[i][j] == '0'){
+                continue;
+            }else{
+                eliminateIsland(i, j, g);
+            }
+
         }
 
-        grid[x][y] = '0';
-
-
-        if(x-1 >= 0 && grid[x - 1][y] == '1'){
-            eliminateIsland(x-1, y, grid);
-        }
-        if(x+1 < grid.length   && grid[x + 1][y] == '1'){
-            eliminateIsland(x+1,y, grid);
-        }
-        if(y + 1 < grid[x].length  && grid[x][y + 1] == '1'){
-            eliminateIsland(x,y+1, grid);
-        }
-        if(y-1 >= 0 && grid[x][y - 1] == '1'){
-            eliminateIsland(x,y-1, grid);
-        }
-
+        return;
     }
-
 
 }
