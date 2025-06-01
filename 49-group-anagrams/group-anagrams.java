@@ -16,7 +16,6 @@ class Solution {
             groups.add(l);
         }
 
-        System.gc();
         return groups;
     }
 }
