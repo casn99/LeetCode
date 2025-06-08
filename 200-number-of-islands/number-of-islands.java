@@ -23,10 +23,12 @@ class Solution {
         g[x][y] = '0';
 
         for(int[] d : directions){
-            if(x  + d[0] < 0 || y  + d[1] < 0 || x  + d[0] >= g.length || y  + d[1] >= g[x].length){
+            int c = x  + d[0];
+            int u = y + d[1];
+            if(c < 0 || u < 0 || c >= g.length || u >= g[x].length){
 
             }else{
-                eliminateIsland(g, x + d[0], y + d[1]);
+                eliminateIsland(g, c, u);
             }
         }
     }
