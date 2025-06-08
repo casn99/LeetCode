@@ -20,7 +20,7 @@ public String reorganizeString(String s) {
             while(runner < p.length && p[first] == p[runner]){
                 runner++;
             }
-            if(runner < p.length && p[first] != p[runner]){
+            if(runner < p.length){
                 char temp = p[first + 1];
                 p[first + 1] = p[runner];
                 p[runner] = temp;
