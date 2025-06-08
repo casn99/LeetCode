@@ -26,10 +26,10 @@ class Solution {
             int c = x  + d[0];
             int u = y + d[1];
             if(c < 0 || u < 0 || c >= g.length || u >= g[x].length){
-
-            }else{
-                eliminateIsland(g, c, u);
+                continue;
             }
+            eliminateIsland(g, c, u);
+            
         }
     }
 
