@@ -1,53 +1,10 @@
-/*
-
-public String reorganizeString(String s) {
-
-        char[] p = s.toCharArray();
-
-        if(p.length <= 1){
-            return s;
-        }
-        if(p.length == 2 && p[0] != p[1]){
-            return s;
-        }
-
-        int first = 0;
-        int runner = 1;
-
-        for(int i = 0; i < s.length() - 1; i++){
-            first = i;
-            runner = i +1;
-            while(runner < p.length && p[first] == p[runner]){
-                runner++;
-            }
-            if(runner < p.length){
-                char temp = p[first + 1];
-                p[first + 1] = p[runner];
-                p[runner] = temp;
-            }else{
-               return ""; 
-            }
-        }
-
-
-        return String.valueOf(p);
-
-        
-    }
-
-*/
-
-
-
-
-
 class Solution {
     public String reorganizeString(String s) {
         if(s.length() <= 1){
             return s;
         }
-        if(s.length() == 2 && s.charAt(0) != s.charAt(1)){
-            return s;
+        if(s.length() == 2){
+            return s.charAt(0) != s.charAt(1) ? s : "";
         }
 
         char[] answer = new char[s.length()];
@@ -81,7 +38,6 @@ class Solution {
                 }else{
                     return "";
                 }
-                
 
             }
 
